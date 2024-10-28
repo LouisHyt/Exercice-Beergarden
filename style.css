@@ -201,6 +201,7 @@ html{
         align-items: center;
         background-position: center;
         background-repeat: no-repeat;
+        background-size: cover;
 
         &.barrel {
             background-image: url("./resources//img/h5-el-holder-img-1-1.jpg");
