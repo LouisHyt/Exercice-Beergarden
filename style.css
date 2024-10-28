@@ -7,6 +7,12 @@
     --text-lg: 1.25rem;
     --text-xl: 1.5rem;
     --text-2xl: 2rem;
+    --text-3xl: 3rem;
+    --text-4xl: 3.5rem;
+
+    --accent-color: rgb(207, 149, 86);
+    --accent-color-hover: rgb(232, 169, 101);
+    --paragraph-text: rgb(84, 84, 84);
 }
 
 *,
@@ -17,21 +23,14 @@
     box-sizing: border-box;
 }
 
-img{
-    max-width: 100%;
-}
-
 html{
     font-family: 'Times New Roman', Times, serif
-}
-
-body{
-    min-height: 100vh;
 }
 
 .navbar{
     width: 100%;
     position: fixed;
+    z-index: 10;
     background-color: rgba(0, 0, 0, 0.85);
     display: flex;
     justify-content: space-between;
@@ -82,6 +81,141 @@ body{
 
 }
 
-.section1{
+.section_home{
     height: 100vh;
+    width: 100%;
+
+    figure{
+        position: absolute;
+    }
+
+    .home__bg::after{
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.85);
+    }
+
+    .home__bg {
+        inset: 0;
+    }
+
+    .home__bg > img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background-size: cover;
+    }
+
+
+    .home__logo{
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+}
+
+.section_citation{
+    background-color: var(--accent-color);
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: var(--text-4xl);
+    padding: 2em 3.5em;
+    font-weight: 600;
+    line-height: 1em;
+
+    &::after,
+    &::before{
+        content: "”"
+    }
+}
+
+.section_traditions{
+
+    .subsection {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .subsection__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        padding-inline: 3em;
+        text-align: center;
+    }
+
+    .info__title{
+
+        text-align: center;
+        line-height: 2.5em;
+
+        .title{
+            font-family: 'Oswald', sans-serif;
+            font-size: var(--text-3xl);
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+        .subtitle{
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            font-weight: 600;
+        }
+    }
+
+    .info__description{
+        font-family: 'Raleway', sans-serif;
+        color: var(--paragraph-text);
+        line-height: 2em;
+        font-size: var(--text-md);
+    }
+
+    .info__button{
+        color: white;
+        font-family: 'Oswald', sans-serif;
+        padding: 0.5em 3em;
+        border: none;
+        background-color: var(--accent-color);
+        border-radius: 7px;
+        text-transform: uppercase;
+        font-size: var(--text-lg);
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover{
+            background-color: var(--accent-color-hover);
+        }
+    }
+
+    .subsection__logo{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &.barrel {
+            background-image: url("./resources//img/h5-el-holder-img-1-1.jpg");
+        }
+
+        &.beer {
+            background-image: url("./resources//img/h5-el-holder-img-2.jpg");
+        }
+
+        & > img {
+            width: 75%;
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+
+    }
+
 }
