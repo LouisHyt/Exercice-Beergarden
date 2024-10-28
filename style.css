@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --text-sm: 1rem;
+    --text-md: 1.125rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 2rem;
+}
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+}
+
+html{
+    font-family: 'Times New Roman', Times, serif
+}
+
+body{
+    min-height: 100vh;
+}
+
+.navbar{
+    width: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    color: white;
+    text-transform: uppercase;
+    padding: 1.75em 2em;
+    --nav-hover-color: rgb(192, 192, 192);
+
+    .navbar__title{
+        font-size: var(--text-xl);
+        font-weight: 500;
+    }
+
+    .navbar__links{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+        list-style: none;
+        font-size: var(--text-md);
+
+        a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.2s;
+        }
+    }
+
+    .navbar__socials{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5em;
+
+        & > i {
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+
+    }
+
+    .navbar__socials > i:hover,
+    .navbar__links > li > a:hover {
+        color: var(--nav-hover-color);
+    }
+
+}
+
+.section1{
+    height: 100vh;
+}
