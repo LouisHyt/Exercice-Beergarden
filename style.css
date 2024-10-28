@@ -146,7 +146,7 @@ html{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 1em;
+        gap: 1.5em;
         padding-inline: 3em;
         text-align: center;
     }
@@ -154,7 +154,6 @@ html{
     .info__title{
 
         text-align: center;
-        line-height: 2.5em;
 
         .title{
             font-family: 'Oswald', sans-serif;
