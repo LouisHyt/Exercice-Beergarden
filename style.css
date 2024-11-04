@@ -468,16 +468,18 @@ html{
     display: grid;
     place-items: center;
     text-align: center;
+    font-size: clamp(40px, 6vw, var(--text-4xl));
 
     .parallax_title{
         font-family: 'Oswald';
+        padding: 1em;
     }
 
     .title{
         color: rgb(221, 221, 221);
         font-weight: 400;
         text-transform: uppercase;
-        font-size: var(--text-4xl);
+        font-size: 1em;
         margin-bottom: 0.25em;
     }
 
@@ -485,8 +487,9 @@ html{
         color: rgb(205, 205, 205);
         font-family: 'Times New Roman', Times, serif;
         font-style: italic;
-        font-size: var(--text-lg);
+        font-size: 0.4em;
         text-transform: capitalize;
+        text-wrap: wrap;
     }
 
 }
@@ -495,13 +498,13 @@ html{
 
     overflow: hidden;
     position: relative;
-    height: 35vw;
+    height: max(350px, 30vw);
     width: 100%;
 
     iframe{
-        width: 170%;
+        width: 320%;
         height: 100%;
-        transform: translateX(-20%);
+        transform: translateX(-35%);
         filter: grayscale(80%) brightness(80%) contrast(130%);
     }
 
@@ -526,7 +529,7 @@ html{
 
 .footer{
     background-color: black;
-    padding-block: 7em;
+    padding-block: clamp(20px, 7vh, 250px);
     text-align: center;
     
     & > h2 {
