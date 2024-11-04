@@ -235,7 +235,7 @@ html{
 
     .home__logo{
         z-index: 2;
-        width: clamp(300px, 30%, 600px);
+        width: clamp(250px, 50vw, 600px);
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -353,16 +353,17 @@ html{
 .section_gallery{
 
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(4, 1fr);
     
 
     .gallery_item{
-        background-color: red;
         display: grid;
-        place-items: center;
         aspect-ratio: 1;
+        place-items: center;
         position: relative;
         cursor: pointer;
+        overflow: hidden;
+        grid-row: span 2;
 
         &::after{
             content: "";
@@ -378,8 +379,6 @@ html{
         }
 
         figure{
-            width: 100%;
-            height: 100%;
             overflow: hidden;
         }
     
@@ -388,7 +387,7 @@ html{
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) rotate(-90deg);
-            font-size: 5em;
+            font-size: clamp(70px, 5vw, 120px);
             color: white;
             z-index: 5;
             opacity: 0;
@@ -414,45 +413,47 @@ html{
 }
 
 .section_service{
-    height: 50vh;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    gap: 2em;
     text-align: center;
-    padding-inline: 6vw;
+    padding: 2em;
+    gap: 2em;
 
-    .service__img{
-        margin-bottom: 1.5em;
-
-        & > img {
-            scale: 1.2;
-        }
-
-    }
-
-    .service__text{
+    .service{
+        display: grid;
+        grid-template-rows: repeat(3, auto);
+        grid-row: span 3;
+        width: 300px;
         font-family: 'Oswald';
         user-select: none;
+        gap: 1em;
+    }
 
-        .title{
-            font-size: 1.5em;
-            text-transform: uppercase;
-            transition: color 0.3s ease;
+    .service__img{
+
+        & > img {
+            width: 150px;
         }
 
-        &:hover .title{
-            color: var(--accent-color);
-        }
-    
-        .subtitle{
-            color: var(--paragraph-text);
-            font-weight: 300;
-            font-size: var(--text-lg);
-        }
     }
 
 
+    .title{
+        font-size: 1.5em;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+    }
+
+    .service:hover .title{
+        color: var(--accent-color);
+    }
+
+    .subtitle{
+        color: var(--paragraph-text);
+        font-weight: 300;
+        font-size: var(--text-lg);
+    }
 
 
 }
@@ -575,5 +576,9 @@ html{
         .info__description{
             color: rgb(214, 214, 214);
         }
+    }
+
+    .section_gallery{
+        grid-template-columns: 1fr 1fr;
     }
 }
